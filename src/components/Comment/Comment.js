@@ -1,10 +1,10 @@
 const Comment = ({ name, email, body }) => {
   return (
-    <div>
-      <h1>{name}</h1>
+    <li>
+      <h1>{name} said...</h1>
       <h2>{email}</h2>
       <p>{body}</p>
-    </div>
+    </li>
   );
 };
 

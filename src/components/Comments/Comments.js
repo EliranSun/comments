@@ -22,11 +22,11 @@ const Comments = ({ loadMoreItems, itemsLimit }) => {
   }, [itemsLimit]);
 
   return (
-    <div className={styles.wrapper} onScroll={loadMoreItems}>
+    <ol className={styles.wrapper} onScroll={loadMoreItems}>
       {comments.map(({ id, name, email, body }) => (
         <Comment key={id} name={name} email={email} body={body} />
       ))}
-    </div>
+    </ol>
   );
 };
 
