@@ -1,10 +1,9 @@
 import "./App.css";
-import { Comments } from "./components";
-
+import { Comments, EndlessScroll } from "./components";
 function App() {
   return (
     <div className="App">
-      <Comments />
+      <EndlessScroll>{(props) => <Comments {...props} />}</EndlessScroll>
     </div>
   );
 }

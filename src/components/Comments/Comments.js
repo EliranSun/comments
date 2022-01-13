@@ -2,27 +2,27 @@ import { useState, useEffect } from "react";
 import { getComments } from "../../services/comments";
 import { Comment } from "../Comment";
 
-const COMMENTS_LIMIT = 20;
-const COMMENTS_START = 0;
+import styles from "./Comments.module.scss";
 
-const Comments = () => {
+const COMMENTS_TO_LOAD = 20;
+
+const Comments = ({ loadMoreItems, itemsLimit }) => {
   const [comments, setComments] = useState([]);
-  const [commentsStart, setCommentsStart] = useState(COMMENTS_START);
 
   useEffect(() => {
     const fetch = async () => {
       const comments = await getComments({
-        start: commentsStart,
-        limit: COMMENTS_LIMIT,
+        start: itemsLimit - COMMENTS_TO_LOAD,
+        limit: itemsLimit,
       });
       setComments(comments);
     };
 
     fetch();
-  }, [commentsStart]);
+  }, [itemsLimit]);
 
   return (
-    <div>
+    <div className={styles.wrapper} onScroll={loadMoreItems}>
       {comments.map(({ id, name, email, body }) => (
         <Comment key={id} name={name} email={email} body={body} />
       ))}
