@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ADD_COMMENT_URL, COMMENTS_URL } from "../constants/comments";
+import Comment from "../models/Comment";
 
 export const getComments = async ({ start, limit }) => {
   try {
@@ -10,16 +11,13 @@ export const getComments = async ({ start, limit }) => {
       },
     });
 
-    return data;
+    return data.map((comment) => new Comment(comment));
   } catch (error) {
     console.error(error);
     throw new Error(error);
   }
 };
 
-export const addComment = () => {
-  return axios.post(ADD_COMMENT_URL, {
-    name: "Test",
-    email: "",
-  });
+export const addComment = (comment) => {
+  return axios.post(ADD_COMMENT_URL, new Comment(comment));
 };

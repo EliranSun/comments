@@ -11,7 +11,6 @@ const EndlessScroll = ({ children }) => {
   return children({
     itemsLimit,
     loadMoreItems: (event) => {
-      console.log({ threshold, itemsLimit });
       if (event.target.scrollTop > threshold) {
         setItemsLimit(itemsLimit + ITEMS_PER_PAGE);
         setThreshold(event.target.scrollHeight - SCROLL_THRESHOLD);

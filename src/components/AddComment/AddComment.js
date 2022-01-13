@@ -6,7 +6,7 @@ import styles from "./AddComment.module.scss";
 const AddComment = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [comment, setComment] = useState("");
+  const [body, setBody] = useState("");
 
   return (
     <div className={styles.addComment}>
@@ -24,12 +24,12 @@ const AddComment = () => {
         onChange={(event) => setEmail(event.target.value)}
       />
       <textarea
-        value={comment}
-        onChange={(event) => setComment(event.target.value)}
+        value={body}
+        onChange={(event) => setBody(event.target.value)}
       />
       <button
         onClick={() => {
-          addComment({ comment, name, email });
+          addComment({ body, name, email });
         }}>
         SEND
       </button>
