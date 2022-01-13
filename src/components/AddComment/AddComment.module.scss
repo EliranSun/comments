@@ -1,0 +1,11 @@
+@import "../../variables.scss";
+
+.addComment {
+  background-color: $BG_COLOR;
+  max-width: $MAX_WIDTH;
+  box-shadow: $SHADOW;
+  margin: $SPACING auto;
+  padding: $SPACING;
+  display: flex;
+  flex-direction: column;
+}

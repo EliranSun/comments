@@ -15,7 +15,7 @@ const Comments = ({ loadMoreItems, itemsLimit }) => {
         start: itemsLimit - COMMENTS_TO_LOAD,
         limit: itemsLimit,
       });
-      setComments([...comments, ...fetchedComments]);
+      setComments((c) => [...c, ...fetchedComments]);
     };
 
     fetch();

@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { addComment } from "../../services/comments";
 
+import styles from "./AddComment.module.scss";
+
 const AddComment = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
 
   return (
-    <div>
+    <div className={styles.addComment}>
       ADD COMMENT
       <input
         type="text"
