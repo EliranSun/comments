@@ -11,11 +11,11 @@ const Comments = ({ loadMoreItems, itemsLimit }) => {
 
   useEffect(() => {
     const fetch = async () => {
-      const comments = await getComments({
+      const fetchedComments = await getComments({
         start: itemsLimit - COMMENTS_TO_LOAD,
         limit: itemsLimit,
       });
-      setComments(comments);
+      setComments([...comments, ...fetchedComments]);
     };
 
     fetch();
