@@ -36,6 +36,7 @@ const AddComment = ({ onSubmit }) => {
           if ((name || email) && body) {
             const comment = { body, name, email };
             await addComment(comment);
+            // optimistic update
             onSubmit(comment);
           } else {
             setIsErrorView(true);

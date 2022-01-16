@@ -11,11 +11,13 @@ const Comments = ({ comments: initialComments, loadMoreItems, itemsLimit }) => {
 
   useEffect(() => {
     const fetch = async () => {
-      const fetchedComments = await getComments({
+      const newComments = await getComments({
         start: itemsLimit - COMMENTS_TO_LOAD,
         limit: COMMENTS_TO_LOAD,
       });
-      setComments((c) => [...c, ...fetchedComments]);
+
+      // functional update to aboid incorrect effect dependency
+      setComments((prevComments) => [...prevComments, ...newComments]);
     };
 
     fetch();

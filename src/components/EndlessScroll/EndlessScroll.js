@@ -10,6 +10,7 @@ const EndlessScroll = ({ children }) => {
     itemsLimit,
     loadMoreItems: (event) => {
       const { scrollHeight, scrollTop } = event.target;
+      // trigger initial load at 2/3 of the scrollHeight
       const initThreshold = (scrollHeight * 2) / 3;
       if (scrollTop > (threshold || initThreshold)) {
         setItemsLimit(itemsLimit + ITEMS_PER_PAGE);
