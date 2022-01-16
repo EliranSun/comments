@@ -6,7 +6,7 @@ import styles from "./Comments.module.scss";
 
 const COMMENTS_TO_LOAD = 20;
 
-const Comments = ({ loadMoreItems, itemsLimit }) => {
+const Comments = ({ comments: initialComments, loadMoreItems, itemsLimit }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Comments = ({ loadMoreItems, itemsLimit }) => {
 
   return (
     <ol className={styles.wrapper} onScroll={loadMoreItems}>
-      {comments.map(({ id, name, email, body }) => (
+      {initialComments.concat(comments).map(({ id, name, email, body }) => (
         <Comment key={id} name={name} email={email} body={body} />
       ))}
     </ol>

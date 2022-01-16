@@ -1,14 +1,14 @@
 @import '../../variables.scss';
 
 .wrapper {
-  height: 90vh;
+  height: 50vh;
   margin: auto;
   overflow: auto;
   max-width: $MAX_WIDTH;
   padding: $SPACING;
 
   li:nth-child(even) {
-    background: hsl(0, 0, 92%);
+    background: $BG_COLOR;
   }
 
   &::-webkit-scrollbar {

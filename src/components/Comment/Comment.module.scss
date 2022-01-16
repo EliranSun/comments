@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.comment {
+  border-radius: $RADIUS;
+  padding: $SPACING;
+  background-color: $PRIMARY_COLOR;
+  margin: $SPACING auto;
+}
+
+.name {
+  color: $TEXT_COLOR_PRIMARY;
+}
+
+.body {
+  color: $TEXT_COLOR_SECONDARY;
+}
