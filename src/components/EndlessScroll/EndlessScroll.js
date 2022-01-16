@@ -8,7 +8,7 @@ const EndlessScroll = ({ children }) => {
   const endlessRef = useRef(null);
   const [scale, setScale] = useState(1);
   const [itemsLimit, setItemsLimit] = useState(ITEMS_PER_PAGE);
-  const [threshold, setThreshold] = useState(INIT_THRESHOLD);
+  const [threshold, setThreshold] = useState(0);
 
   return children({
     itemsLimit,
@@ -36,6 +36,14 @@ const EndlessScroll = ({ children }) => {
         //   setThreshold(threshold * 2);
         // }
       }
+
+      //       const { scrollHeight, scrollTop } = event.target;
+      // // trigger initial load at 2/3 of the scrollHeight
+      // const initThreshold = (scrollHeight * 2) / 3;
+      // if (scrollTop > (threshold || initThreshold)) {
+      //   setItemsLimit(itemsLimit + ITEMS_PER_PAGE);
+      //   setThreshold(scrollHeight);
+      // }
     },
   });
 };

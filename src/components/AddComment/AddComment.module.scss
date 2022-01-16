@@ -6,6 +6,34 @@
   box-shadow: $SHADOW;
   margin: $SPACING auto;
   padding: $SPACING;
-  display: flex;
+  border-radius: $RADIUS;
   flex-direction: column;
+
+  input,
+  textarea,
+  button {
+    width: 100%;
+    max-width: 100%;
+    border-radius: $RADIUS;
+    padding: $INPUT_SPACING;
+    margin: $INPUT_SPACING;
+    border: 1px solid $BG_COLOR_SECONDARY;
+  }
+
+  button {
+    color: black;
+    background-color: $SECONDARY_COLOR;
+    height: 48px;
+    border: unset;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: 900;
+      box-shadow: inset 0 0 12px -7px rgb(0 0 0 / 50%);
+    }
+  }
+}
+
+.error {
+  border: 1px solid tomato;
 }
