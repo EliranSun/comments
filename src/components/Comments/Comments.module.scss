@@ -1,38 +1,22 @@
 @import '../../variables.scss';
 
-.wrapper {
-  height: 90vh;
+.centeralComment {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   margin: auto;
-  overflow: auto;
-  max-width: $MAX_WIDTH;
-  padding: $SPACING;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  li:nth-child(even) {
-    background: hsl(0, 0, 92%);
-  }
-
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 18px;
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    height: 6px;
-    border: 2px solid rgba(0, 0, 0, 0);
-    background-clip: padding-box;
-    -webkit-border-radius: 7px;
-    background-color: rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
-  }
-
-  &::-webkit-scrollbar-button {
-    width: 0;
-    height: 0;
-    display: none;
-  }
-
-  &::-webkit-scrollbar-corner {
-    background-color: transparent;
-  }
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }

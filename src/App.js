@@ -3,7 +3,7 @@ import { Comments, AddComment, EndlessScroll } from "./components";
 function App() {
   return (
     <div>
-      <AddComment />
+      {/* <AddComment /> */}
       <EndlessScroll>{(props) => <Comments {...props} />}</EndlessScroll>
     </div>
   );

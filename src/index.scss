@@ -28,10 +28,13 @@ body {
 
 h1 {
   font-size: 2em;
-  color: black;
 }
 
 h2 {
   font-size: 1em;
   color: $CHARLESTON_GREEN;
+}
+
+.flex {
+  display: flex;
 }
