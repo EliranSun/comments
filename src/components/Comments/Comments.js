@@ -13,7 +13,7 @@ const Comments = ({ loadMoreItems, itemsLimit }) => {
     const fetch = async () => {
       const fetchedComments = await getComments({
         start: itemsLimit - COMMENTS_TO_LOAD,
-        limit: itemsLimit,
+        limit: COMMENTS_TO_LOAD,
       });
       setComments((c) => [...c, ...fetchedComments]);
     };
